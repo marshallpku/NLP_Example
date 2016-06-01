@@ -48,7 +48,7 @@ duration <- function(vec, dr) {
 #****************************************************************************************************
 #                Get and adjust ucrp data ####
 #****************************************************************************************************
-df <- read_excel(paste0("./data-raw/", "ucrp_djb.xlsx"), sheet="2015UCRP_djb")
+df <- read_excel(paste0("ucrp_djb.xlsx"), sheet="2015UCRP_djb")
 glimpse(df)
 ht(df)
 # check each variable for plausibility
