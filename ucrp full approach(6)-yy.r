@@ -195,7 +195,8 @@ pvratios <- pv.years %>% filter(year==1) %>%
 pvratios
 
 # steps 1 and 2: shift each fit curve so that it has the same year1 value as known actives and so that it has same pv
-steps1and2 <- df5 %>% mutate(step1=ifelse(year==1, pvratios$year1[pvratios$variable=="actives"], value)) %>%
+steps1and2 <- df5 %>% 
+  mutate(step1=ifelse(year==1, pvratios$year1[pvratios$variable=="actives"], value)) %>%
   mutate(step2=ifelse(year>1, step1 / pvratios$year2pratio[match(variable, pvratios$variable)], step1))
 # verify that year1 values are the same
 steps1and2 %>% filter(year<=3)
